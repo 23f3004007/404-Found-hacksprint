@@ -38,7 +38,6 @@ const deleteLecture = {
 
 module.exports = {
     createLecture,
-    getLectures,
     getLecture,
     updateLecture,
     deleteLecture,

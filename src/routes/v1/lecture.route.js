@@ -8,13 +8,13 @@ const router = express.Router();
 
 router
     .route('/')
-    .post(auth('createLectures'), validate(lectureValidation.createLecture), lectureController.createLecture)
-    .get('getLectures', validate(lectureValidation.getLectures), lectureController.getLectures);
+    .post(auth(), validate(lectureValidation.createLecture), lectureController.createLecture)
+    .get(lectureController.getLectures);
 
 router
     .route("/:lectureId")
-    .get(auth('getLectures'), validate(lectureValidation.getLecture), lectureController.getLecture)
-    .patch(auth('manageLectures'), validate(lectureValidation.updateLecture), lectureController.updateLecture)
-    .delete(auth('manageLectures'), validate(lectureValidation.deleteLecture), lectureController.deleteLecture);
+    .get(validate(lectureValidation.getLecture), lectureController.getLecture)
+    .patch( validate(lectureValidation.updateLecture), lectureController.updateLecture)
+    .delete(validate(lectureValidation.deleteLecture), lectureController.deleteLecture);
 
 module.exports = router;
