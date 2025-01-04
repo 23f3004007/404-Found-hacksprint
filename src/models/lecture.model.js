@@ -23,7 +23,16 @@ const lectureSchema = mongoose.Schema(
             type: String,
             required: true,
             trim: true,
-        }
+        },
+        instructor: {
+            type: mongoose.SchemaTypes.ObjectId,
+            ref: 'User',
+            required: true,
+        },
+        review: [{
+            type: mongoose.SchemaTypes.ObjectId,
+            ref: 'Review',
+        }]
     },
     {
         timestamps: true,

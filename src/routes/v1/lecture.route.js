@@ -11,10 +11,12 @@ router
     .post(auth(), validate(lectureValidation.createLecture), lectureController.createLecture)
     .get(lectureController.getLectures);
 
+router.get('/instructor', auth(), lectureController.getInstructorLectures);
+
 router
     .route("/:lectureId")
     .get(validate(lectureValidation.getLecture), lectureController.getLecture)
-    .patch( validate(lectureValidation.updateLecture), lectureController.updateLecture)
+    .patch(validate(lectureValidation.updateLecture), lectureController.updateLecture)
     .delete(validate(lectureValidation.deleteLecture), lectureController.deleteLecture);
 
 module.exports = router;
