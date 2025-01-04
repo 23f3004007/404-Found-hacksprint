@@ -17,7 +17,7 @@ const getLectures = catchAsync(async (req, res) => {
 );
 
 const getLecture = catchAsync(async (req, res) => {
-    const lecture = await lectureService.getLectureById(req.params.lectureId);
+    const lecture = await lectureService.getLecture(req.params.lectureId);
     if (!lecture) {
         throw new ApiError(httpStatus.NOT_FOUND, 'Lecture not found');
     }
@@ -26,13 +26,13 @@ const getLecture = catchAsync(async (req, res) => {
 );
 
 const updateLecture = catchAsync(async (req, res) => {
-    const lecture = await lectureService.updateLectureById(req.params.lectureId, req.body);
+    const lecture = await lectureService.updateLecture(req.params.lectureId, req.body);
     res.send(lecture);
 }
 );
 
 const deleteLecture = catchAsync(async (req, res) => {
-    await lectureService.deleteLectureById(req.params.lectureId);
+    await lectureService.deleteLecture(req.params.lectureId);
     res.status(httpStatus.NO_CONTENT).send();
 }
 );
