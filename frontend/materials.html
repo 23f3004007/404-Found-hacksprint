@@ -5,6 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classes - SkillShare Connect</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      background: url('header-bg-darkened.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 1.5em 0;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #251E3A;
+      padding: 1em 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1.5em;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #005fa3;
+    }
+
+    .container {
+      padding: 4em 2em;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro {
+      font-size: 1.5em;
+      margin-bottom: 2em;
+    }
+
+    .home-buttons a {
+      display: inline-block;
+      margin: 1em;
+      padding: 1em 2em;
+      background-color: #3E3356;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-buttons a:hover {
+      background-color: #6E5E95;
+    }
+
+    .feature-section {
+      margin-top: 4em;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      width: 30%;
+      margin-bottom: 2em;
+    }
+
+    .feature img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      margin-top: 1em;
+      text-align: center;
+      padding: 0.5em 0;
+      background-color: #251E3A;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,18 +106,16 @@
   </header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="classes.html">Classes</a>
     <a href="materials.html">Materials</a>
     <a href="feedback.html">Feedback</a>
     <a href="login.html">Login</a>
   </nav>
   <div class="container">
-    <h2>Available Classes</h2>
-    <ul>
-      <li>Coding 101</li>
-      <li>Cooking Basics</li>
-      <li>Beginner Spanish</li>
-    </ul>
+    <h2>Browse or Upload Lectures</h2>
+    <div class="home-buttons">
+      <a href="lectures.html">Upload</a>
+      <a href="classes.html">Browse</a>
+    </div>
   </div>
   <footer>
     <p>&copy; 2025 SkillShare Connect. All rights reserved.</p>

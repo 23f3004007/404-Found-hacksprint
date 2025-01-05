@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkillShare Connect</title>
+  <title>SkillShare Connect - Lectures</title>
   <link rel="stylesheet" href="style.css">
   <style>
     body {
@@ -17,9 +17,9 @@
     header {
       background: url('header-bg-darkened.jpg') no-repeat center center/cover;
       color: white;
-      padding: 1.5em 0;
+      padding: 1em 0;
       text-align: center;
-      font-size: 2.5em;
+      font-size: 2em;
       font-weight: bold;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     }
@@ -42,7 +42,7 @@
     }
 
     nav a:hover {
-      background-color: #005fa3;
+      background-color: #3E3356;
     }
 
     .container {
@@ -57,44 +57,48 @@
       margin-bottom: 2em;
     }
 
-    .home-buttons a {
-      display: inline-block;
-      margin: 1em;
-      padding: 1em 2em;
-      background-color: #3E3356;
-      color: white;
-      text-decoration: none;
-      font-size: 1.2em;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .home-buttons a:hover {
-      background-color: #6E5E95;
-    }
-
-    .feature-section {
+    .upload-section {
       margin-top: 4em;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
     }
 
-    .feature {
-      width: 30%;
-      margin-bottom: 2em;
-    }
-
-    .feature img {
-      width: 100%;
+    form {
+      background-color: white;
+      padding: 2em;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      text-align: left;
+    }
+
+    form label, form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    form input, form textarea {
+      padding: 0.8em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #251E3A;
+      color: white;
+      padding: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #3E3356;
     }
 
     footer {
-      margin-top: 1em;
+      margin-top: 4em;
       text-align: center;
-      padding: 0.5em 0;
+      padding: 2em 0;
       background-color: #251E3A;
       color: white;
     }
@@ -102,7 +106,7 @@
 </head>
 <body>
   <header>
-    SkillShare Connect
+    SkillShare Connect - Lectures
   </header>
   <nav>
     <a href="index.html">Home</a>
@@ -112,17 +116,29 @@
   </nav>
 
   <div class="container">
-    <h2>Welcome to SkillShare Connect</h2>
-    <p class="intro">Our platform connects skilled instructors with individuals in marginalized areas, offering learning opportunities in coding, cooking, language skills, and more. Whether you're a learner looking to grow or an instructor eager to share your expertise, SkillShare Connect fosters opportunity, growth, and social equality for all.</p>
-    <div class="home-buttons">
-      <a href="materials.html">Get Started</a>
+    <h2>Upload New Materials</h2>
+    <p class="intro">Upload materials and share knowledge with the community :)</p>
+    
+    <div class="upload-section">
+      <form action="/lectures" method="post" enctype="multipart/form-data">
+        <label for="title">Lecture Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="subject">Subject:</label>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="5" required></textarea>
+
+        <label for="file">Upload Lecture File:</label>
+        <input type="file" id="file" name="file" required>
+
+        <button type="submit">Upload</button>
+      </form>
     </div>
   </div>
 
   <footer>
     <p>&copy; 2025 SkillShare Connect. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

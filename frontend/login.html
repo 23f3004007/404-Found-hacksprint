@@ -3,13 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - SkillShare Connect</title>
+  <title>SkillShare Connect - Login</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body{
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: url('header-bg-darkened.jpg') no-repeat center center/cover;
+      color: white;
+      padding: 1.5em 0;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #251E3A;
+      padding: 1em 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1.5em;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #005fa3;
+    }
+
+    .container {
+      padding: 4em 2em;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro {
+      font-size: 1.5em;
+      margin-bottom: 2em;
+    }
+
+    .home-buttons a {
+      display: inline-block;
+      margin: 1em;
+      padding: 1em 2em;
+      background-color: #3E3356;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-buttons a:hover {
+      background-color: #6E5E95;
+    }
+
+    .feature-section {
+      margin-top: 4em;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      width: 30%;
+      margin-bottom: 2em;
+    }
+
+    .feature img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      margin-top: 1em;
+      text-align: center;
+      padding: 0.5em 0;
+      background-color: #251E3A;
+      color: white;
+    }
+
+    .container {
+      display: flex;
       justify-content: center;
       align-items: center;
-  }
+      height: 100vh;
+    }
+
+    .login-form {
+      background-color: white;
+      padding: 3em;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-form h2 {
+      margin-bottom: 1em;
+    }
+
+    form label, form input, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1.5em;
+    }
+
+    form input {
+      padding: 0.8em;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #251E3A;
+      color: white;
+      padding: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #3E3356;
+    }
+
+    footer {
+      margin-top: 4em;
+      text-align: center;
+      padding: 2em 0;
+      background-color: #251E3A;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -18,26 +159,29 @@
   </header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="classes.html">Classes</a>
-    <a href="materials.html">Materails</a>
+    <a href="materials.html">Materials</a>
     <a href="feedback.html">Feedback</a>
     <a href="login.html">Login</a>
   </nav>
   <div class="container">
-    <h1 align="center">User Login</h1><br>
-  <form method="POST" action="{{url_for('login')}}">
-    <label for="username">Username:</label>
-    <input type="text" id="username" placeholder="enter your username" required>
-    <br>
-    <label for="password">Password:</label>
-    <input type="password" id="passowrd" name="password" placeholder="enter your password" required>
-    <button type="submit" class="btn">Login</button>
-  <p>Don't have an account? <a href="userregister.html">Register Here</a></p>
-  </form>
+    <div class="login-form">
+      <h2>Login to save your progress</h2>
+      <form action="/auth/login" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
   </div>
+
   <footer>
     <p>&copy; 2025 SkillShare Connect. All rights reserved.</p>
   </footer>
-  <script src="script.js"></script>
 </body>
 </html>
+
